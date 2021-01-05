@@ -40,8 +40,12 @@ export default function App() {
 		});
 	};
 
+	const inputKeyDown = event => {
+		if (event.keyCode === 13) getImagesAndVideos();
+	};
+
 	return (
-		<div className="grid center">
+		<div className="grid center" style={{gap: "1rem"}}>
 			<div className="grid center">
 				<input
 					id="input-query"
@@ -49,35 +53,43 @@ export default function App() {
 					style={{
 						width: "250px",
 						padding: "0.5rem",
-						border: "2px solid black",
+						border: "none",
 						borderRadius: "5px",
 						fontSize: "1.75rem",
 						backgroundColor: "rgba(0,0,0,0.1)"
 					}}
 					value={query}
 					onChange={updateInputQuery}
+					onKeyDown={inputKeyDown}
 				/>
-				<button
-					onClick={getImagesAndVideos}
-					style={{
-						width: "100px",
-						border: "2px solid black",
-						borderRadius: "5px",
-						fontSize: "1.25rem",
-						backgroundColor: "rgba(0,0,0,0.1)"
-					}}
-				>
-					Find Images
-				</button>
+				<div style={{display: "flex", justifyContent: "center"}}>
+					<button onClick={getImagesAndVideos} className="custom-button">
+						Find Images
+					</button>
+				</div>
 			</div>
 			<div className="image-grid">
-				{images.map(image => (
-					<div style={{display: "flex", alignItems: "center"}}>
+				{images.map((image, i) => (
+					<div
+						style={{
+							display: "flex",
+							alignItems: "center",
+							position: "relative"
+						}}
+					>
+						<div className="number-tag">{i + 1}</div>
 						<img src={image} alt={searchQuery} style={{maxWidth: "300px"}} />
 					</div>
 				))}
-				{videos.map(video => (
-					<div style={{display: "flex", alignItems: "center"}}>
+				{videos.map((video, i) => (
+					<div
+						style={{
+							display: "flex",
+							alignItems: "center",
+							position: "relative"
+						}}
+					>
+						<div className="number-tag">{i + 8}</div>
 						<img
 							src={video.tiny}
 							alt={searchQuery}

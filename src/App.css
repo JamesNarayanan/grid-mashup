@@ -2,6 +2,24 @@
 	display: grid;
 	grid-template: repeat(3, auto) / repeat(3, 300px);
 	gap: 0.25rem;
+	padding: 1.5rem;
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.custom-button {
+	width: 100px;
+	padding: 0.5rem 1rem;
+	border: none;
+	border-radius: 5px;
+	font-size: 1.25rem;
+	background-color: rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: background-color 0.25s;
+}
+
+.custom-button:hover {
+	background-color: rgba(0, 0, 0, 0.2);
 }
 
 .grid {
@@ -10,4 +28,16 @@
 
 .center {
 	justify-content: center;
+}
+
+.number-tag {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	padding: 0.25rem 0.5rem;
+	border-radius: 5px;
+	font-size: 2rem;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: white;
 }
