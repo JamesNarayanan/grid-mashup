@@ -1,0 +1,13 @@
+.image-grid {
+	display: grid;
+	grid-template: repeat(3, auto) / repeat(3, 300px);
+	gap: 0.25rem;
+}
+
+.grid {
+	display: grid;
+}
+
+.center {
+	justify-content: center;
+}
