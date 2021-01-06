@@ -119,7 +119,6 @@ export default function App() {
 					onChange={updateInputQuery}
 					onKeyDown={inputKeyDown}
 				/>
-				{/* <div style={{display: "flex", justifyContent: "center"}}> */}
 				<button
 					onClick={getImagesAndVideos}
 					className="custom-button"
@@ -133,10 +132,10 @@ export default function App() {
 					style={{width: "100%"}}
 					onClick={saveFavorites}
 					disabled={selectedImages.length === 0}
+					title="Click on the image's number tags to favorite them"
 				>
 					Save Favorites
 				</button>
-				{/* </div> */}
 			</div>
 			<div className="image-grid">
 				{images.map((image, i) => (
@@ -144,6 +143,7 @@ export default function App() {
 						style={{
 							display: "flex",
 							alignItems: "center",
+							justifyContent: "center",
 							position: "relative"
 						}}
 						key={i}
@@ -163,7 +163,7 @@ export default function App() {
 						<img
 							src={image}
 							alt={prevSearchQuery}
-							style={{maxWidth: "300px"}}
+							style={{maxWidth: "300px", maxHeight: "300px"}}
 						/>
 					</div>
 				))}
@@ -189,7 +189,12 @@ export default function App() {
 						>
 							{i + 8}
 						</div>
-						<video src={video.tiny} width="300" autoplay controls />
+						<video
+							src={video.tiny}
+							style={{maxWidth: "300px", maxHeight: "300px"}}
+							autoplay
+							controls
+						/>
 					</div>
 				))}
 			</div>
