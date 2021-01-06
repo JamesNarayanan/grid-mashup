@@ -8,7 +8,6 @@
 }
 
 .custom-button {
-	width: 100px;
 	padding: 0.5rem 1rem;
 	border: none;
 	border-radius: 5px;
@@ -18,7 +17,11 @@
 	transition: background-color 0.25s;
 }
 
-.custom-button:hover {
+.custom-button:disabled {
+	cursor: default;
+}
+
+.custom-button:hover:enabled {
 	background-color: rgba(0, 0, 0, 0.2);
 }
 
